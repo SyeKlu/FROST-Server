@@ -228,3 +228,34 @@ frost:
     implementationClass: "de.fraunhofer.iosb.ilt.sta.messagebus.MqttMessageBus"
     topicName: "FROST-Bus"
     qos: 2
+  
+  ##################################################
+  #        FROST-Server Plugin configuration       #
+  ##################################################
+  plugins:
+
+    #Configuration coreModel Plugin
+    coreModel:
+      enabled: true
+      editableDsProperties: false
+      idType: #TODO implement idType per-table config
+        datastream: plugins.coreModel.idType
+        feature: plugins.coreModel.idType
+        historicalLocation: plugins.coreModel.idType
+        location: plugins.coreModel.idType
+        observedProperty: plugins.coreModel.idType
+        observation: plugins.coreModel.idType
+        sensor: plugins.coreModel.idType
+        thing: plugins.coreModel.idType
+
+    #Configuration actuation Plugin
+    actuation:
+      enabled: false
+      actuator: plugins.coreModel.idType
+      task: plugins.coreModel.idType
+      taskingCapability: plugins.coreModel.idType
+
+    #Configuration multiDatastream Plugin
+    multiDatastream:
+      enabled: false
+      idType: plugins.coreModel.idType
