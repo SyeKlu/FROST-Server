@@ -90,6 +90,7 @@ frost:
   # FROST-Server Database module configuration #
   ##############################################
   db:
+    enabled: true
     image:
       registry: docker.io
       repository: postgis/postgis
