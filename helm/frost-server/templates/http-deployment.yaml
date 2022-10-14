@@ -77,6 +77,58 @@ spec:
               value: "{{ .Values.frost.http.cors.support.credentials }}"
             {{- end}}
 
+            #Data Model Plugins
+
+            #Core Model Plugin
+            {{ if .Values.frost.plugins.coremodel.enabled -}}
+            - name: plugins.coreModel.enable
+              value: "{{ .Values.frost.plugins.coreModel.enabled }}"
+            - name: plugins.coreModel.editableDsProperties
+              value: "{{ .Values.frost.plugins.coreModel.editableDsProperties }}"
+            - name: plugins.coreModel.idType
+              value: "{{ .Values.frost.plugins.coreModel.idType }}"
+            - name: plugins.coreModel.idType.datastream
+              value: "{{ .Values.frost.plugins.coreModel.idType.datastream }}"
+            - name: plugins.coreModel.idType.feature
+              value: "{{ .Values.frost.plugins.coreModel.idType.feature }}"
+            - name: plugins.coreModel.idType.historicalLocation
+              value: "{{ .Values.frost.plugins.coreModel.idType.historicalLocation }}"
+            - name: plugins.coreModel.idType.location
+              value: "{{ .Values.frost.plugins.coreModel.idType.location }}"
+            - name: plugins.coreModel.idType.observedProperty
+              value: "{{ .Values.frost.plugins.coreModel.idType.observedProperty }}"
+            - name: plugins.coreModel.idType.observation
+              value: "{{ .Values.frost.plugins.coreModel.idType.observation }}"
+            - name: plugins.coreModel.idType.sensor
+              value: "{{ .Values.frost.plugins.coreModel.idType.sensor }}"
+            - name: plugins.coreModel.idType.thing
+              value: "{{ .Values.frost.plugins.coreModel.idType.thing }}"
+            {{- end }}
+
+            #Actuation Plugin
+            {{ if .Values.frost.plugins.coremodel.enabled -}}
+            {{ if .Values.frost.plugins.actuation.enabled -}}
+            - name: plugins.actuation.enable
+              value: "{{ .Values.frost.plugins.actuation.enabled }}"
+            - name: plugins.actuation.idType.actuator
+              value: "{{ .Values.frost.plugins.actuation.actuator }}"
+            - name: plugins.actuation.idType.task
+              value: "{{ .Values.frost.plugins.actuation.task }}"
+            - name: plugins.actuation.idType.taskingCapability
+              value: "{{ .Values.frost.plugins.actuation.taskingCapability }}"
+            {{- end }}
+            {{- end }}
+
+            #MultiDatastream Plugin
+            {{ if .Values.frost.plugins.coremodel.enabled -}}
+            {{ if .Values.frost.plugins.multidatastream.enabled -}}
+            - name: plugins.multiDatastream.enable
+              value: "{{ .Values.frost.plugins.multidatastream.enabled }}"
+            - name: plugins.multiDatastream.idType.multiDatastream
+              value: "{{ .Values.frost.plugins.multidatastream.idType }}"
+            {{- end }}
+            {{- end }}
+
             {{ if .Values.frost.mqtt.enabled -}}
             # Messages bus related properties
             - name: bus_mqttBroker
@@ -102,13 +154,19 @@ spec:
               value: "de.fraunhofer.iosb.ilt.sta.messagebus.InternalMessageBus"
             {{- end }}
 
+            
             # Persistence related properties
+            {{ if .Values.frost.db.enabled -}}
+              - name: persistence_db_url
+              value: {{ printf "jdbc:postgresql://%s:5432/%s" (include "frost-server.fullName" (merge (dict "tier" "db") .)) .Values.frost.db.database | quote }}
+            {{ else }}
+            - name: persistence_db_url
+              value: "{{ .Values.frost.db.url }}"
+            {{- end }}
             - name: persistence_db_jndi_datasource
               value: ""
             - name: persistence_db_driver
               value: "{{ .Values.frost.db.driver }}"
-            - name: persistence_db_url
-              value: {{ printf "jdbc:postgresql://%s:5432/%s" (include "frost-server.fullName" (merge (dict "tier" "db") .)) .Values.frost.db.database | quote }}
             - name: persistence_persistenceManagerImplementationClass
               value: "{{ .Values.frost.db.implementationClass }}"
             - name: persistence_idGenerationMode
@@ -133,3 +191,4 @@ spec:
                 secretKeyRef:
                   name: {{ include "frost-server.fullName" . }}
                   key: db.password
+            

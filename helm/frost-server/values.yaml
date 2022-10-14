@@ -91,6 +91,7 @@ frost:
   ##############################################
   db:
     enabled: true
+    url:
     image:
       registry: docker.io
       repository: postgis/postgis
