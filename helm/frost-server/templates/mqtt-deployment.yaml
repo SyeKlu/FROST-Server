@@ -134,8 +134,6 @@ spec:
               value: "{{ .Values.frost.plugins.coreModel.enabled }}"
             - name: plugins.coreModel.editableDsProperties
               value: "{{ .Values.frost.plugins.coreModel.editableDsProperties }}"
-            - name: plugins.coreModel.idType
-              value: "{{ .Values.frost.plugins.coreModel.idType }}"
             - name: plugins.coreModel.idType.datastream
               value: "{{ .Values.frost.plugins.coreModel.idType.datastream }}"
             - name: plugins.coreModel.idType.feature
