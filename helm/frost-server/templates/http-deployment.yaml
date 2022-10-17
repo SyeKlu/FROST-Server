@@ -157,22 +157,9 @@ spec:
             {{ if .Values.frost.db.enabled -}}
               - name: persistence_db_url
               value: {{ printf "jdbc:postgresql://%s:5432/%s" (include "frost-server.fullName" (merge (dict "tier" "db") .)) .Values.frost.db.database | quote }}
-              - name: persistence_db_username
-              valueFrom:
-                secretKeyRef:
-                  name: {{ include "frost-server.fullName" . }}
-                  key: db.username
-              - name: persistence_db_password
-              valueFrom:
-                secretKeyRef:
-                  name: {{ include "frost-server.fullName" . }}
-                  key: db.password
             {{ else }}
             - name: persistence_db_url
               value: "{{ .Values.frost.db.url }}"
-            - name: persistence_db_password
-              valueFrom:
-              value: "{{ .Values.frost.db.password }}"
             {{- end }}
             - name: persistence_db_jndi_datasource
               value: ""
@@ -192,7 +179,16 @@ spec:
               value: "{{ .Values.frost.http.db.maximumIdleConnection }}"
             - name: persistence_db_conn_idle_min
               value: "{{ .Values.frost.http.db.maximumIdleConnection }}"
-            
+            - name: persistence_db_username
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "frost-server.fullName" . }}
+                  key: db.username
+            - name: persistence_db_password
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "frost-server.fullName" . }}
+                  key: db.password
 
             - name: auth_provider
               value: "{{ .Values.frost.auth.provider }}"
