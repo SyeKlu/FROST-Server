@@ -222,7 +222,7 @@ frost:
     # FROST-Server Messages Bus deployment settings
     ports:
       bus:
-        servicePort: 1883
+        serviserviceProtocol  cePort: 1883
 
     # Common FROST-Server Messages Bus properties, shared by any other FROST-Server modules
     implementationClass: "de.fraunhofer.iosb.ilt.sta.messagebus.MqttMessageBus"
@@ -264,7 +264,7 @@ frost:
     #TODO Add auth provider config
 
   auth:
-    enableAuthentication: true
+    #enableAuthentication: true
     provider: de.fraunhofer.iosb.ilt.frostserver.auth.basic.BasicAuthProvider
     dbDriver: org.postgresql.Driver
     dburl: jdbc:postgresql://database:5432/sensorthings

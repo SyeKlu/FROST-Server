@@ -192,7 +192,7 @@ spec:
                   name: {{ include "frost-server.fullName" . }}
                   key: db.password
 
-            
+
             - name: auth_provider
               value: "{{ .Values.frost.auth.provider }}"
             - name: auth_autoUpdateDatabase
@@ -212,20 +212,20 @@ spec:
               value: "{{ .Values.frost.auth.dbUser }}"
             - name: auth_db_password
               value: "{{ .Values.frost.auth.dbPassword }}"
-            - name: auth_role_read
-              value: "{{ .Values.frost.auth.roleRead }}"
-            - name: auth_role_create
-              value: "{{ .Values.frost.auth.roleCreate }}"
-            - name: auth_role_update
-              value: "{{ .Values.frost.auth.roleUpdate }}"
-            - name: auth_role_delete
-              value: "{{ .Values.frost.auth.roleDelete }}"
-            - name: auth_role_admin
-              value: "{{ .Values.frost.auth.roleAdmin }}"
-            - name: auth_keycloakConfigUrl
-              value: "{{ .Values.frost.auth.keycloakConfigUrl }}"
-            - name: auth_keycloakConfigSecret
-              value: "{{ .Values.frost.auth.keycloakConfigSecret }}"
+            #- name: auth_role_read
+            #  value: "{{ .Values.frost.auth.roleRead }}"
+            #- name: auth_role_create
+            #  value: "{{ .Values.frost.auth.roleCreate }}"
+            #- name: auth_role_update
+            #  value: "{{ .Values.frost.auth.roleUpdate }}"
+            #- name: auth_role_delete
+            #  value: "{{ .Values.frost.auth.roleDelete }}"
+            #- name: auth_role_admin
+            #  value: "{{ .Values.frost.auth.roleAdmin }}"
+            #- name: auth_keycloakConfigUrl
+            #  value: "{{ .Values.frost.auth.keycloakConfigUrl }}"
+            #- name: auth_keycloakConfigSecret
+            #  value: "{{ .Values.frost.auth.keycloakConfigSecret }}"
 
 
             
