@@ -80,7 +80,7 @@ spec:
             #Data Model Plugins
 
             #Core Model Plugin
-            {{ if .Values.frost.plugins.coremodel.enabled -}}
+            {{ if .Values.frost.plugins.coreModel.enabled -}}
             - name: plugins.coreModel.enable
               value: "{{ .Values.frost.plugins.coreModel.enabled }}"
             - name: plugins.coreModel.editableDsProperties
@@ -104,7 +104,7 @@ spec:
             {{- end }}
 
             #Actuation Plugin
-            {{ if .Values.frost.plugins.coremodel.enabled -}}
+            {{ if .Values.frost.plugins.coreModel.enabled -}}
             {{ if .Values.frost.plugins.actuation.enabled -}}
             - name: plugins.actuation.enable
               value: "{{ .Values.frost.plugins.actuation.enabled }}"
@@ -118,7 +118,7 @@ spec:
             {{- end }}
 
             #MultiDatastream Plugin
-            {{ if .Values.frost.plugins.coremodel.enabled -}}
+            {{ if .Values.frost.plugins.coreModel.enabled -}}
             {{ if .Values.frost.plugins.multidatastream.enabled -}}
             - name: plugins.multiDatastream.enable
               value: "{{ .Values.frost.plugins.multidatastream.enabled }}"
