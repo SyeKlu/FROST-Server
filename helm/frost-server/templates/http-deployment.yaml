@@ -119,11 +119,11 @@ spec:
 
             #MultiDatastream Plugin
             {{ if .Values.frost.plugins.coreModel.enabled -}}
-            {{ if .Values.frost.plugins.multidatastream.enabled -}}
+            {{ if .Values.frost.plugins.multiDatastream.enabled -}}
             - name: plugins.multiDatastream.enable
-              value: "{{ .Values.frost.plugins.multidatastream.enabled }}"
+              value: "{{ .Values.frost.plugins.multiDatastream.enabled }}"
             - name: plugins.multiDatastream.idType.multiDatastream
-              value: "{{ .Values.frost.plugins.multidatastream.idType }}"
+              value: "{{ .Values.frost.plugins.multiDatastream.idType }}"
             {{- end }}
             {{- end }}
 
