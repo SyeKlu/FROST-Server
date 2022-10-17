@@ -83,6 +83,8 @@ spec:
             {{ if .Values.frost.plugins.coreModel.enabled -}}
             - name: plugins.coreModel.enable
               value: "{{ .Values.frost.plugins.coreModel.enabled }}"
+            - name: plugins.coreModel.idType
+              value: "{{ .Values.frost.plugins.coreModel.idType.basicType }}"
             #- name: plugins.coreModel.editableDsProperties
             #  value: "{{ .Values.frost.plugins.coreModel.editableDsProperties }}"
             #- name: plugins.coreModel.idType.datastream
