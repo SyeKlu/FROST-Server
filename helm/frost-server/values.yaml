@@ -217,7 +217,7 @@ frost:
     image:
         registry: docker.io
         repository: eclipse-mosquitto
-        tag: 1.4.12
+        tag: latest
         pullPolicy: IfNotPresent
     # FROST-Server Messages Bus deployment settings
     ports:
