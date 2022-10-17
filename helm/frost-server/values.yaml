@@ -259,3 +259,5 @@ frost:
     multiDatastream:
       enabled: false
       idType: plugins.coreModel.idType
+
+    #TODO Add auth provider config
