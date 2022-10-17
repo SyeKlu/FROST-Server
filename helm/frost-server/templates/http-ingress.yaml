@@ -8,8 +8,8 @@ metadata:
   annotations:
     {{ .Values.frost.http.ingress.rewriteAnnotation}}: {{ .Values.frost.http.ingress.rewriteTraget}}
     {{- if .Values.frost.http.ingress.annotations }}
-    {{- toYaml .Values.frost.http.ingress.annotations | nindent 4 -}}
-    {{- end }}
+    {{- toYaml .Values.frost.http.ingress.annotations | nindent 4 }}
+    {{ end }}
   labels:
     app.kubernetes.io/managed-by: {{ .Release.Service }}
     app.kubernetes.io/instance: {{ .Release.Name }}
