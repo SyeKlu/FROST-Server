@@ -132,24 +132,24 @@ spec:
             {{ if .Values.frost.plugins.coreModel.enabled -}}
             - name: plugins.coreModel.enable
               value: "{{ .Values.frost.plugins.coreModel.enabled }}"
-            - name: plugins.coreModel.editableDsProperties
-              value: "{{ .Values.frost.plugins.coreModel.editableDsProperties }}"
-            - name: plugins.coreModel.idType.datastream
-              value: "{{ .Values.frost.plugins.coreModel.idType.datastream }}"
-            - name: plugins.coreModel.idType.feature
-              value: "{{ .Values.frost.plugins.coreModel.idType.feature }}"
-            - name: plugins.coreModel.idType.historicalLocation
-              value: "{{ .Values.frost.plugins.coreModel.idType.historicalLocation }}"
-            - name: plugins.coreModel.idType.location
-              value: "{{ .Values.frost.plugins.coreModel.idType.location }}"
-            - name: plugins.coreModel.idType.observedProperty
-              value: "{{ .Values.frost.plugins.coreModel.idType.observedProperty }}"
-            - name: plugins.coreModel.idType.observation
-              value: "{{ .Values.frost.plugins.coreModel.idType.observation }}"
-            - name: plugins.coreModel.idType.sensor
-              value: "{{ .Values.frost.plugins.coreModel.idType.sensor }}"
-            - name: plugins.coreModel.idType.thing
-              value: "{{ .Values.frost.plugins.coreModel.idType.thing }}"
+            #- name: plugins.coreModel.editableDsProperties
+            #  value: "{{ .Values.frost.plugins.coreModel.editableDsProperties }}"
+            #- name: plugins.coreModel.idType.datastream
+            #  value: "{{ .Values.frost.plugins.coreModel.idType.datastream }}"
+            #- name: plugins.coreModel.idType.feature
+            #  value: "{{ .Values.frost.plugins.coreModel.idType.feature }}"
+            #- name: plugins.coreModel.idType.historicalLocation
+            #  value: "{{ .Values.frost.plugins.coreModel.idType.historicalLocation }}"
+            #- name: plugins.coreModel.idType.location
+            #  value: "{{ .Values.frost.plugins.coreModel.idType.location }}"
+            #- name: plugins.coreModel.idType.observedProperty
+            #  value: "{{ .Values.frost.plugins.coreModel.idType.observedProperty }}"
+            #- name: plugins.coreModel.idType.observation
+            #  value: "{{ .Values.frost.plugins.coreModel.idType.observation }}"
+            #- name: plugins.coreModel.idType.sensor
+            #  value: "{{ .Values.frost.plugins.coreModel.idType.sensor }}"
+            #- name: plugins.coreModel.idType.thing
+            #  value: "{{ .Values.frost.plugins.coreModel.idType.thing }}"
             {{- end }}
 
             #Actuation Plugin
