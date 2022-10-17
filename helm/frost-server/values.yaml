@@ -262,7 +262,7 @@ frost:
       idType: plugins.coreModel.idType
 
     #TODO Add auth provider config
-    
+
   auth:
     enableAuthentication: true
     provider: de.fraunhofer.iosb.ilt.frostserver.auth.basic.BasicAuthProvider
