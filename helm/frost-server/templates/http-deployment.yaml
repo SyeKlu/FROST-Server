@@ -192,6 +192,7 @@ spec:
                   name: {{ include "frost-server.fullName" . }}
                   key: db.password
 
+            
             - name: auth_provider
               value: "{{ .Values.frost.auth.provider }}"
             - name: auth_autoUpdateDatabase
