@@ -193,25 +193,25 @@ spec:
                   key: db.password
 
 
-            - name: auth_provider
-              value: "{{ .Values.frost.auth.provider }}"
-            - name: auth_autoUpdateDatabase
-              value: "{{ .Values.frost.auth.autoUpdateDatabase }}"
-            - name: auth_db_driver
-              value: "{{ .Values.frost.auth.dbDriver }}"
-            {{ if .Values.frost.db.enabled -}}
-            - name: auth_db_url
-              value: {{ printf "jdbc:postgresql://%s:5432/%s" (include "frost-server.fullName" (merge (dict "tier" "db") .)) .Values.frost.db.database | quote }}
-            {{ else }}
-            - name: auth_db_url
-              value: "{{ .Values.frost.auth.dburl }}"
-            {{- end }}
-            - name: auth_allowAnonymousRead
-              value: "{{ .Values.frost.auth.allowAnonymousRead }}"
-            - name: auth_db_username
-              value: "{{ .Values.frost.auth.dbUser }}"
-            - name: auth_db_password
-              value: "{{ .Values.frost.auth.dbPassword }}"
+            #- name: auth_provider
+            #  value: "{{ .Values.frost.auth.provider }}"
+            #- name: auth_autoUpdateDatabase
+            #  value: "{{ .Values.frost.auth.autoUpdateDatabase }}"
+            #- name: auth_db_driver
+            #  value: "{{ .Values.frost.auth.dbDriver }}"
+            #{{ if .Values.frost.db.enabled -}}
+            #- name: auth_db_url
+            #  value: {{ printf "jdbc:postgresql://%s:5432/%s" (include "frost-server.fullName" (merge (dict "tier" "db") .)) .Values.frost.db.database | quote }}
+            #{{ else }}
+            #- name: auth_db_url
+            #  value: "{{ .Values.frost.auth.dburl }}"
+            #{{- end }}
+            #- name: auth_allowAnonymousRead
+            #  value: "{{ .Values.frost.auth.allowAnonymousRead }}"
+            #- name: auth_db_username
+            #  value: "{{ .Values.frost.auth.dbUser }}"
+            #- name: auth_db_password
+            #  value: "{{ .Values.frost.auth.dbPassword }}"
             #- name: auth_role_read
             #  value: "{{ .Values.frost.auth.roleRead }}"
             #- name: auth_role_create
