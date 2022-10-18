@@ -87,7 +87,7 @@ spec:
               value: "{{ .Values.frost.plugins.coreModel.idType.basicType }}"
             - name: plugins.coreModel.editableDsProperties
               value: "{{ .Values.frost.plugins.coreModel.editableDsProperties }}"
-              name: plugins.coreModel.idType.datastream
+            - name: plugins.coreModel.idType.datastream
               value: "{{ .Values.frost.plugins.coreModel.idType.datastream }}"
             - name: plugins.coreModel.idType.feature
               value: "{{ .Values.frost.plugins.coreModel.idType.feature }}"
@@ -157,7 +157,7 @@ spec:
             
             # Persistence related properties
             {{ if .Values.frost.db.enabled -}}
-              - name: persistence_db_url
+            - name: persistence_db_url
               value: {{ printf "jdbc:postgresql://%s:5432/%s" (include "frost-server.fullName" (merge (dict "tier" "db") .)) .Values.frost.db.database | quote }}
             {{ else }}
             - name: persistence_db_url
