@@ -132,26 +132,8 @@ spec:
             {{ if .Values.frost.plugins.coreModel.enabled -}}
             - name: plugins.coreModel.enable
               value: "{{ .Values.frost.plugins.coreModel.enabled }}"
-            #- name: plugins.coreModel.idType
-            #  value: "{{ .Values.frost.plugins.coreModel.idType.basicType }}"
             - name: plugins.coreModel.editableDsProperties
               value: "{{ .Values.frost.plugins.coreModel.editableDsProperties }}"
-            #- name: plugins.coreModel.idType.datastream
-            #  value: "{{ .Values.frost.plugins.coreModel.idType.datastream }}"
-            #- name: plugins.coreModel.idType.feature
-            #  value: "{{ .Values.frost.plugins.coreModel.idType.feature }}"
-            #- name: plugins.coreModel.idType.historicalLocation
-            #  value: "{{ .Values.frost.plugins.coreModel.idType.historicalLocation }}"
-            #- name: plugins.coreModel.idType.location
-            #  value: "{{ .Values.frost.plugins.coreModel.idType.location }}"
-            #- name: plugins.coreModel.idType.observedProperty
-            #  value: "{{ .Values.frost.plugins.coreModel.idType.observedProperty }}"
-            #- name: plugins.coreModel.idType.observation
-            #  value: "{{ .Values.frost.plugins.coreModel.idType.observation }}"
-            #- name: plugins.coreModel.idType.sensor
-            #  value: "{{ .Values.frost.plugins.coreModel.idType.sensor }}"
-            #- name: plugins.coreModel.idType.thing
-            #  value: "{{ .Values.frost.plugins.coreModel.idType.thing }}"
             {{- end }}
 
             #Actuation Plugin
@@ -159,12 +141,6 @@ spec:
             {{ if .Values.frost.plugins.actuation.enabled -}}
             - name: plugins.actuation.enable
               value: "{{ .Values.frost.plugins.actuation.enabled }}"
-            #- name: plugins.actuation.idType.actuator
-            #  value: "{{ .Values.frost.plugins.actuation.actuator }}"
-            #- name: plugins.actuation.idType.task
-            #  value: "{{ .Values.frost.plugins.actuation.task }}"
-            #- name: plugins.actuation.idType.taskingCapability
-            #  value: "{{ .Values.frost.plugins.actuation.taskingCapability }}"
             {{- end }}
             {{- end -}}
 
@@ -173,8 +149,6 @@ spec:
             {{ if .Values.frost.plugins.multiDatastream.enabled -}}
             - name: plugins.multiDatastream.enable
               value: "{{ .Values.frost.plugins.multiDatastream.enabled }}"
-            #- name: plugins.multiDatastream.idType.multiDatastream
-            #  value: "{{ .Values.frost.plugins.multiDatastream.idType }}"
             {{- end }}
             {{- end -}}
 
