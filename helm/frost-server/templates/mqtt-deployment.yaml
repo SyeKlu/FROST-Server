@@ -192,13 +192,13 @@ spec:
             - name: auth_autoUpdateDatabase
               value: "{{ .Values.frost.auth.autoUpdateDatabase }}"
             - name: auth_db_driver
-              vaue: "{{ .Values.frost.auth.db.driver }}"
+              value: "{{ .Values.frost.auth.db.driver }}"
             - name: auth_db_url
-              vaue: "{{ .Values.frost.auth.db.url }}"
+              value: "{{ .Values.frost.auth.db.url }}"
             - name: auth_db_username
-              vaue: "{{ .Values.frost.auth.db.username }}"
+              value: "{{ .Values.frost.auth.db.username }}"
             - name: auth_db_password
-              vaue: "{{ .Values.frost.auth.db.password }}"
+              value: "{{ .Values.frost.auth.db.password }}"
             - name: auth_allowAnonymousRead
               value: "{{ .Values.frost.auth.allowAnonymousRead }}"
             - name: auth_role_read
