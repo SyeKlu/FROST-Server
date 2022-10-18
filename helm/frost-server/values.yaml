@@ -238,7 +238,7 @@ frost:
     coreModel:
       enabled: true
       editableDsProperties: false
-      idType: #TODO implement idType per-table config
+      idType:
         basicType: Long
         datastream: plugins.coreModel.idType
         feature: plugins.coreModel.idType
