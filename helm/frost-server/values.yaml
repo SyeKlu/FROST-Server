@@ -265,10 +265,11 @@ frost:
   auth:
     enableAuthentication: true
     provider: de.fraunhofer.iosb.ilt.frostserver.auth.basic.BasicAuthProvider
-    dbDriver: org.postgresql.Driver
-    dburl: jdbc:postgresql://database:5432/sensorthings
-    dbUser: sensorthings
-    dbPassword: ChangeMe
+    db:
+      driver: org.postgresql.Driver
+      url: jdbc:postgresql://database:5432/sensorthings
+      username: sensorthings
+      password: ChangeMe
     allowAnonymousRead: false
     roleRead: read
     roleCreate: create
