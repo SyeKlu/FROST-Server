@@ -238,28 +238,28 @@ frost:
     coreModel:
       enabled: true
       editableDsProperties: false
-      idType:
-        basicType: Long
-        datastream: plugins.coreModel.idType
-        feature: plugins.coreModel.idType
-        historicalLocation: plugins.coreModel.idType
-        location: plugins.coreModel.idType
-        observedProperty: plugins.coreModel.idType
-        observation: plugins.coreModel.idType
-        sensor: plugins.coreModel.idType
-        thing: plugins.coreModel.idType
+      #idType:
+      #  basicType: Long
+      #  datastream: plugins.coreModel.idType
+      #  feature: plugins.coreModel.idType
+      #  historicalLocation: plugins.coreModel.idType
+      #  location: plugins.coreModel.idType
+      #  observedProperty: plugins.coreModel.idType
+      #  observation: plugins.coreModel.idType
+      #  sensor: plugins.coreModel.idType
+      #  thing: plugins.coreModel.idType
 
     #Configuration actuation Plugin
     actuation:
       enabled: false
-      actuator: plugins.coreModel.idType
-      task: plugins.coreModel.idType
-      taskingCapability: plugins.coreModel.idType
+      #actuator: plugins.coreModel.idType
+      #task: plugins.coreModel.idType
+      #taskingCapability: plugins.coreModel.idType
 
     #Configuration multiDatastream Plugin
     multiDatastream:
       enabled: false
-      idType: plugins.coreModel.idType
+      #idType: plugins.coreModel.idType
 
     #TODO Add auth provider config
   auth:
