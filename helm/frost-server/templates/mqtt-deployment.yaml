@@ -134,6 +134,8 @@ spec:
               value: "{{ .Values.frost.plugins.coreModel.enabled }}"
             - name: plugins.coreModel.editableDsProperties
               value: "{{ .Values.frost.plugins.coreModel.editableDsProperties }}"
+            - name: plugins.coreModel.idType
+              value: "{{ .Values.frost.plugins.coreModel.idType.basicType }}"
             - name: plugins.coreModel.idType.datastream
               value: "{{ .Values.frost.plugins.coreModel.idType.datastream }}"
             - name: plugins.coreModel.idType.feature
@@ -164,7 +166,7 @@ spec:
             - name: plugins.actuation.idType.taskingCapability
               value: "{{ .Values.frost.plugins.actuation.taskingCapability }}"
             {{- end }}
-            {{- end }}
+            {{- end -}}
 
             #MultiDatastream Plugin
             {{ if .Values.frost.plugins.coreModel.enabled -}}
@@ -174,8 +176,7 @@ spec:
             - name: plugins.multiDatastream.idType.multiDatastream
               value: "{{ .Values.frost.plugins.multiDatastream.idType }}"
             {{- end }}
-            {{- end }}
-
+            {{- end -}}
 
             # Persistence related properties
             {{ if .Values.frost.db.enabled -}}
