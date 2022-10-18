@@ -196,9 +196,15 @@ spec:
             - name: auth_db_url
               value: "{{ .Values.frost.auth.db.url }}"
             - name: auth_db_username
-              value: "{{ .Values.frost.auth.db.username }}"
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "frost-server.fullName" . }}
+                  key: auth.db.username
             - name: auth_db_password
-              value: "{{ .Values.frost.auth.db.password }}"
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "frost-server.fullName" . }}
+                  key: auth.db.password
             - name: auth_allowAnonymousRead
               value: "{{ .Values.frost.auth.allowAnonymousRead }}"
             - name: auth_role_read
